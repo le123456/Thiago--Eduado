@@ -1,3 +1,5 @@
+console.log("main.js loaded");
+
 const consultantData = {
   name: "Thiago Eduard Santos",
   email: "thiagoeduardosantossyn@gmail.com",
@@ -48,6 +50,8 @@ function updateInnerHTMLContent(selector, html) {
 
 // Populate consultant data and set title on page load
 document.addEventListener('DOMContentLoaded', () => {
+  console.log("DOMContentLoaded fired, updating content...");
+
   // Update logo and footer info
   updateTextContent('.logo', `${consultantData.name} | Synergy`);
   updateTextContent('.logo-footer h3', `${consultantData.name} | Synergy`);
@@ -64,4 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     document.title = `${consultantData.name} | Synergy - Consultor Parceiro Santander`;
   }
+
+  console.log("Consultant data updated:", consultantData);
 });
